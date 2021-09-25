@@ -5,12 +5,12 @@ import (
 	. "github.com/onsi/ginkgo/extensions/table"
 	. "github.com/onsi/gomega"
 
-	. "github.com/IvanHristov98/dumbo/challenge/slice"
+	"github.com/IvanHristov98/dumbo/challenge/slice"
 )
 
 var _ = Describe("Permutation", func() {
 	DescribeTable("IsPermutation", func(a, b string, expected bool) {
-		Expect(IsPermutation(a, b)).To(Equal(expected))
+		Expect(slice.IsPermutation(a, b)).To(Equal(expected))
 	},
 		Entry("empty strings", "", "", true),
 		Entry("permutation", "cat", "act", true),
