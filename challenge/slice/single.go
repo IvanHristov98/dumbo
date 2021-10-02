@@ -6,12 +6,12 @@ func FindDiffChar(a, b string) (rune, error) {
 	counts := map[rune]int{}
 
 	for _, r := range a {
-		setDefault(counts, r)
+		setDefaultRuneCount(counts, r)
 		counts[r]++
 	}
 
 	for _, r := range b {
-		setDefault(counts, r)
+		setDefaultRuneCount(counts, r)
 		counts[r]--
 	}
 
@@ -36,7 +36,7 @@ func FindDiffChar(a, b string) (rune, error) {
 	return diffRune, nil
 }
 
-func setDefault(counts map[rune]int, r rune) {
+func setDefaultRuneCount(counts map[rune]int, r rune) {
 	if _, exists := counts[r]; !exists {
 		counts[r] = 0
 	}
